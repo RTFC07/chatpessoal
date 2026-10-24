@@ -184,8 +184,17 @@ tr:last-child td { border-bottom: 0; }
 .rodape { max-width: 960px; margin: 10px auto 0; padding: 16px max(16px, env(safe-area-inset-left)) calc(24px + env(safe-area-inset-bottom)); font-size: 12px; color: var(--texto-3); }
 .rodape p { margin: 4px 0; }
 .assinatura { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--borda); display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
-.grupo-proton { font-family: Montserrat, system-ui, sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.18em; color: var(--texto); }
-.grupo-proton span { color: #e4822e; }
+.grupo-proton { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.atomo-proton { width: 64px; height: 64px; }
+.atomo-proton .px-orbita { stroke: #0e5c86; }
+.gp-nome { font-family: Montserrat, system-ui, sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.18em; color: #10233f; }
+.gp-nome span { color: #e4822e; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .atomo-proton .px-orbita { stroke: #8cc3e6; }
+  :root:not([data-theme='light']) .gp-nome { color: #f3f2ee; }
+}
+:root[data-theme='dark'] .atomo-proton .px-orbita { stroke: #8cc3e6; }
+:root[data-theme='dark'] .gp-nome { color: #f3f2ee; }
 .direitos { font-size: 12px; color: var(--texto-2); }
 .erro { color: var(--marca); font-weight: 600; }
 
