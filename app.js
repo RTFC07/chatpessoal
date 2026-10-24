@@ -349,6 +349,21 @@ document.querySelectorAll('[data-mun]').forEach((b) =>
   }),
 );
 
+// Botão flutuante do WhatsApp: some quando o cartão de inscrição está na tela; o "×" esconde de vez.
+(() => {
+  const fab = $('#zap-flutuante');
+  if (!fab || guardado('zapFechado', '') === '1') return;
+  fab.hidden = false;
+  fab.querySelector('.zap-fechar').addEventListener('click', () => {
+    fab.hidden = true;
+    guardar('zapFechado', '1');
+  });
+  const cartao = $('#cartao-zap');
+  if (cartao && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => fab.classList.toggle('escondido', e.isIntersecting), { rootMargin: '-110px 0px 0px 0px' }).observe(cartao);
+  }
+})();
+
 marcarAbas();
 atualizarResumo();
 atualizarMunicipio();
