@@ -1,0 +1,12 @@
+{
+  "name": "chatpessoal",
+  "private": true,
+  "description": "Botilde Eleições — apuração ao vivo do 2º turno 2026 (presidente), com mapa por estado e colégios de São Félix do Coribe e Santa Maria da Vitória.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.js"
+  }
+}
