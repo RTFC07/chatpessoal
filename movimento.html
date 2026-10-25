@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Que horas ir votar? · Botilde Eleições</title>
+    <meta name="description" content="Apuração ao vivo da eleição para presidente: Brasil, estados e os colégios de São Félix do Coribe e Santa Maria da Vitória." />
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Botilde" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta property="og:title" content="Botilde Eleições" />
+    <meta property="og:description" content="Apuração ao vivo para presidente, por estado e colégio a colégio." />
+    <link rel="icon" href="icone.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icone.svg" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="movimento.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="topo">
+      <div class="topo-linha">
+        <a class="marca-link" href="/"><h1 class="marca" aria-label="Botilde Eleições"><svg class="marca-icone" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+<path d="M24 4.5c10.8 0 19.5 7.8 19.5 17.4S34.8 39.3 24 39.3c-1.9 0-3.8-.2-5.6-.7l-9.6 5 2-8.4C7 32 4.5 27.3 4.5 21.9 4.5 12.3 13.2 4.5 24 4.5Z" stroke="#e5322d" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="M24 9.6v2.6" stroke="#e5322d" stroke-width="1.8" stroke-linecap="round"/><circle cx="24" cy="8" r="1.9" fill="#e5322d"/>
+<rect x="9.4" y="18.2" width="4.6" height="8.4" rx="2.3" fill="#e5322d"/><rect x="34" y="18.2" width="4.6" height="8.4" rx="2.3" fill="#e5322d"/>
+<rect x="13" y="13.6" width="22" height="17.4" rx="6" fill="#e8e8ef" stroke="#e5322d" stroke-width="1.6"/>
+<rect x="15.6" y="16.4" width="16.8" height="9.4" rx="4.2" fill="#14141a"/>
+<path d="M18.6 22.4c.7-1.9 2.6-1.9 3.3 0M25.9 22.4c.7-1.9 2.6-1.9 3.3 0" stroke="#e5322d" stroke-width="1.9" stroke-linecap="round"/>
+<rect x="20.6" y="27.4" width="6.8" height="1.8" rx=".9" fill="#e5322d"/>
+<circle cx="38.5" cy="37.5" r="8.2" fill="#1a9850" stroke="var(--selo-borda,#fff)" stroke-width="2.2"/>
+<path d="m34.6 37.6 2.7 2.7 5.2-5.4" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span class="marca-texto"><span class="m-nome"><span class="m-bot">Bot</span><span class="m-ilde">ilde</span></span><span class="m-el">Eleições</span></span></h1></a>
+              </div>
+          </header>
+    <main>
+      <section class="bloco">
+        <div class="cartao intro-mov">
+          <h2 class="zap-titulo grande">⏰ Que horas ir votar?</h2>
+          <p>Veja <strong>como foi o movimento em cada colégio no 1º turno</strong> (4 de outubro), pelo registro das próprias urnas. O movimento costuma se repetir, então serve de dica para escolher a hora de ir.</p>
+          <div id="legenda-niveis" class="legenda-niveis" aria-label="Legenda"></div>
+          <p class="explica">Quanto mais escuro, mais gente votando naquela hora, ou seja, mais fila.</p>
+        </div>
+      </section>
+
+      <section class="bloco">
+        <div class="abas" role="tablist" aria-label="Município">
+          <button role="tab" data-mun="38822" aria-selected="true">São Félix do Coribe</button>
+          <button role="tab" data-mun="38636" aria-selected="false">Santa Maria da Vitória</button>
+        </div>
+        <label class="rotulo-escolha" for="escolha">Escolha o seu colégio</label>
+        <select id="escolha" class="escolha"></select>
+      </section>
+
+      <section class="bloco" aria-labelledby="t-colegio">
+        <h2 id="t-colegio" class="visually-hidden">Seu colégio</h2>
+        <div id="colegio" class="cartao"><div class="esqueleto"></div></div>
+      </section>
+
+      <section class="bloco">
+        <h2>Todos os colégios da cidade</h2>
+        <p class="dica">Média por sala, hora a hora. Toque num colégio para ver os detalhes.</p>
+        <div id="calor-cidade" class="cartao calor-rolagem"></div>
+      </section>
+
+      <p class="explica nota-mov">Os horários são os do relógio de cada urna. A página mostra quando as pessoas votaram, nunca em quem. Fonte: registro das urnas (TSE), 1º turno de 2026.</p>
+      <p><a class="voltar" href="/">← Voltar para a apuração</a></p>
+    </main>
+    <footer class="rodape">
+      <p>Fonte: TSE (resultados oficiais e boletins de urna). Atualiza sozinho a cada minuto. Não substitui o site do TSE.</p>
+      <div class="assinatura">
+        <div class="grupo-proton" role="img" aria-label="Grupo Proton"><svg class="atomo-proton" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke-width="7" class="px-orbita"><ellipse cx="60" cy="60" rx="52" ry="20"/><ellipse cx="60" cy="60" rx="52" ry="20" transform="rotate(60 60 60)"/><ellipse cx="60" cy="60" rx="52" ry="20" transform="rotate(120 60 60)"/></g><circle cx="60" cy="60" r="11.5" fill="#E4822E"/></svg><span class="gp-nome">GRUPO <span>PROTON</span></span></div>
+        <p class="direitos">© 2026 Grupo Proton. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

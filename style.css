@@ -1,5 +1,8 @@
 /* Botilde Eleições — feito primeiro para celular (Android e iOS). */
 :root {
+  --n1: #fde9c9;
+  --n2: #f6b26b;
+  --n3: #d9583b;
   --fundo: #f6f5f1;
   --cartao: #ffffff;
   --borda: #e4e2da;
@@ -166,6 +169,56 @@ body { padding-bottom: 72px; }
 .zap-fechar {
   width: 28px; height: 28px; margin-left: -10px; margin-top: -30px; border-radius: 50%; border: 0; cursor: pointer;
   background: var(--cartao); color: var(--texto-2); font-size: 17px; line-height: 1; box-shadow: 0 1px 5px rgb(0 0 0 / 0.25);
+}
+
+/* Que horas ir votar? */
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.atalho-mov { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--texto); min-height: 64px; }
+.atalho-ico { font-size: 28px; }
+.atalho-mov small { color: var(--texto-2); font-size: 13px; }
+.atalho-seta { margin-left: auto; font-size: 28px; color: var(--texto-3); }
+.legenda-niveis { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 10px 0 4px; font-size: 14px; font-weight: 600; }
+.legenda-niveis span { display: inline-flex; align-items: center; gap: 6px; }
+.legenda-niveis i { width: 22px; height: 16px; border-radius: 4px; display: inline-block; }
+.explica { font-size: 13px; color: var(--texto-2); margin: 6px 0; }
+.rotulo-escolha { display: block; font-weight: 700; margin: 14px 0 6px; }
+.escolha {
+  width: 100%; min-height: 48px; font: inherit; font-size: 16px; padding: 10px 12px; border-radius: 12px;
+  border: 1px solid var(--borda); background: var(--cartao); color: var(--texto);
+}
+.zona-tag { font-size: 12px; font-weight: 700; color: var(--marca); text-transform: uppercase; letter-spacing: 0.04em; }
+.col-nome { margin: 2px 0; font-size: 19px; }
+.col-end { margin: 0 0 12px; font-size: 13px; color: var(--texto-3); }
+.respostas { display: grid; gap: 10px; }
+.resp { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; }
+.resp small { display: block; font-size: 13px; color: var(--texto-2); }
+.resp strong { font-size: 22px; letter-spacing: -0.01em; }
+.resp.boa { background: color-mix(in srgb, #1a9850 16%, var(--cartao)); border: 1px solid color-mix(in srgb, #1a9850 40%, var(--borda)); }
+.resp.ruim { background: color-mix(in srgb, #d9583b 16%, var(--cartao)); border: 1px solid color-mix(in srgb, #d9583b 40%, var(--borda)); }
+.alerta-fila { background: color-mix(in srgb, #e0a800 20%, var(--cartao)); border: 1px solid color-mix(in srgb, #e0a800 55%, var(--borda)); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; font-size: 15px; }
+.resp-ico { font-size: 24px; }
+.col-resumo { font-size: 15px; margin: 14px 0 6px; }
+#colegio h4 { margin: 18px 0 8px; font-size: 15px; }
+.barras { display: grid; gap: 4px; align-items: end; height: 150px; }
+.barra-hora { display: flex; flex-direction: column; align-items: center; height: 100%; }
+.barra-col { flex: 1; width: 100%; display: flex; align-items: flex-end; }
+.barra-col i { display: block; width: 100%; border-radius: 6px 6px 2px 2px; min-height: 3px; }
+.barra-h { font-size: 11px; color: var(--texto-2); margin-top: 4px; }
+.avisos { margin: 12px 0 0; padding-left: 18px; font-size: 13px; color: var(--texto-2); }
+.calor-rolagem { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.calor { border-collapse: separate; border-spacing: 2px; width: 100%; font-size: 12px; }
+.calor th { font-weight: 600; color: var(--texto-2); padding: 2px 4px; text-align: center; white-space: nowrap; }
+.calor tbody th { text-align: left; color: var(--texto); font-weight: 600; position: sticky; left: 0; background: var(--cartao); max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
+.calor td { height: 30px; min-width: 26px; text-align: center; border-radius: 5px; color: #3b2a1d; font-weight: 600; }
+.calor td span { font-size: 11px; }
+.calor-cidade tbody tr { cursor: pointer; }
+.calor-cidade td span { display: none; }
+.calor-cidade tbody tr:hover th, .calor-cidade tbody tr:focus th { color: var(--marca); }
+.nota-mov { margin-top: 16px; }
+.voltar { color: var(--texto); font-weight: 600; }
+@media (min-width: 720px) {
+  .respostas { grid-template-columns: 1fr 1fr; }
+  .calor-cidade td span { display: inline; }
 }
 
 /* Mapa */
